@@ -74,4 +74,13 @@ SELECT common_name
         )
 ;
 
+-- Show the most recent 2 sightings.
+
+SELECT common_name,sighting_time,name  FROM sightings
+JOIN rangers USING(ranger_id)
+JOIN species USING(species_id)
+ORDER BY sighting_time DESC
+LIMIT 2
+;
+
 
