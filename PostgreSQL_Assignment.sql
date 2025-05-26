@@ -47,7 +47,7 @@ INSERT INTO rangers (name, region) VALUES
 
 -- Count unique species ever sighted.
 
-SELECT count(DISTINCT(species_id)) as "unique_species_count"
+SELECT COUNT(DISTINCT(species_id)) as "unique_species_count"
     FROM sightings;
 
 
@@ -63,3 +63,15 @@ SELECT name, COUNT(sighting_id) as total_sightings
 FROM rangers
 JOIN sightings USING(ranger_id)
 GROUP BY name;
+
+
+--  List species that have never been sighted.
+
+SELECT common_name 
+    FROM species   
+    WHERE species_id NOT IN (
+        SELECT DISTINCT species_id FROM sightings
+        )
+;
+
+
