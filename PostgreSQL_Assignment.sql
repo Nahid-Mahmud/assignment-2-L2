@@ -28,7 +28,18 @@ CREATE TABLE sightings (
     notes TEXT
 );
 
+
+-- Register a new ranger with provided data with name = 'Derek Fox' and region = 'Coastal Plains'
+
 INSERT INTO rangers (name, region) VALUES
 ('Derek Fox','Coastal Plains');
+
+
+
+
+-- Count unique species ever sighted.
+
+SELECT count(DISTINCT(species_id)) as "unique_species_count"
+    FROM sightings;
 
 
