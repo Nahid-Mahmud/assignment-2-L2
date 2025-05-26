@@ -1,4 +1,4 @@
--- Active: 1747545730198@@localhost@5432@ph
+-- Active: 1747545730198@@localhost@5432@conservation_db
 
 CREATE DATABASE conservation_db;
 
@@ -51,4 +51,8 @@ SELECT count(DISTINCT(species_id)) as "unique_species_count"
     FROM sightings;
 
 
+-- Find all sightings where the location includes "Pass".
 
+SELECT * 
+    FROM sightings
+    WHERE location ILIKE '%Pass%';
