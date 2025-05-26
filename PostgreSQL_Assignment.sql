@@ -2,13 +2,8 @@
 
 CREATE DATABASE conservation_db;
 
--- clear   all previous data
--- DROP TABLE IF EXISTS sightings CASCADE;
--- DROP TABLE IF EXISTS species CASCADE;
--- DROP TABLE IF EXISTS rangers CASCADE;
 
-
--- CREATE DATABASE conservation_db;
+--  table creation
 
 CREATE TABLE rangers (
     ranger_id SERIAL PRIMARY KEY,
@@ -37,6 +32,7 @@ CREATE TABLE sightings (
 );
 
 
+-- Insert data for tables
 
 INSERT INTO rangers (name, region) VALUES
 ('Alice Green', 'Mountain Range'),
@@ -49,7 +45,7 @@ INSERT INTO species (species_id, common_name, scientific_name, discovery_date, c
 (3, 'Red Panda', 'Ailurus fulgens', '1825-01-01', 'Vulnerable'),
 (4, 'Asiatic Elephant', 'Elephas maximus indicus', '1758-01-01', 'Endangered');
 
--- Insert data for sightings table
+
 INSERT INTO sightings (sighting_id, species_id, ranger_id, location, sighting_time, notes) VALUES
 (1, 1, 1, 'Peak Ridge', '2024-05-10 07:45:00', 'Camera trap image captured'),
 (2, 2, 2, 'Bankwood Area', '2024-05-12 16:20:00', 'Juvenile seen'),
