@@ -1,4 +1,12 @@
--- Active: 1747545730198@@localhost@5432@conservation_db
+-- Active: 1747545730198@@localhost@5432@ph
+
+CREATE DATABASE conservation_db;
+
+-- clear   all previous data
+-- DROP TABLE IF EXISTS sightings CASCADE;
+-- DROP TABLE IF EXISTS species CASCADE;
+-- DROP TABLE IF EXISTS rangers CASCADE;
+
 
 -- CREATE DATABASE conservation_db;
 
@@ -41,5 +49,6 @@ INSERT INTO rangers (name, region) VALUES
 
 SELECT count(DISTINCT(species_id)) as "unique_species_count"
     FROM sightings;
+
 
 
